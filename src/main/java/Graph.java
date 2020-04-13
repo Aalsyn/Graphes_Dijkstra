@@ -8,7 +8,6 @@ public class Graph {
 
     public Graph(int vertexNumber, float density){
         this.graph = new ArrayList<>(vertexNumber);
-
         generateEdges(vertexNumber, density);
     }
 
@@ -34,7 +33,7 @@ public class Graph {
         for (int i = 0 ; i < graph.size() ; i++){
             graphString.append(graph.get(i) + " : neighbors : [");
             for (int j = 0 ; j < graph.get(i).size() -1; i++){
-                graphString.append(graph.get(i).get(j)) + ", ");
+                graphString.append(graph.get(i).get(j) + ", ");
             }
             graphString.append(graph.get(i).getLast() + "]\n");
         }
