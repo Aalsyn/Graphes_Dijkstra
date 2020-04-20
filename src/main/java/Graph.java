@@ -24,17 +24,14 @@ public class Graph {
         return graph;
     }
 
-    public void setGraph(List<LinkedList<Integer>> graph) {
-        this.graph = graph;
+    public int getVerticesNumber() {
+        return verticesNumber;
     }
 
     public List<Integer> getVertices() {
         return vertices;
     }
 
-    public void setVertices(List<Integer> vertices) {
-        this.vertices = vertices;
-    }
 
     private void generateEdges(float density){
         int edgesNumber = (int) ((verticesNumber * (verticesNumber - 1)) * density);
