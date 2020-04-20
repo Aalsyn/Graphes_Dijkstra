@@ -9,7 +9,7 @@ public class Dijsktra {
         List<Integer> shortestPaths = new ArrayList<>();
 
         for (int vertex : graph.getVertices()){
-            shortestPaths.add(Integer.MAX_VALUE - 1);
+            shortestPaths.add(Integer.MAX_VALUE/100);
         }
         shortestPaths.set(firstVertex, 0);
 
@@ -35,5 +35,14 @@ public class Dijsktra {
         }
         priorityList.remove(min);
         return min;
+    }
+
+    public static String toString(List<Integer> shortestPaths, int firstVertex){
+        String printShortestPaths = firstVertex + " : [ ";
+        for (int i = 0 ; i < shortestPaths.size(); i++){
+            printShortestPaths += shortestPaths.get(i) + " ";
+        }
+        printShortestPaths += "]";
+        return printShortestPaths;
     }
 }
