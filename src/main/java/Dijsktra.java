@@ -21,9 +21,21 @@ public class Dijsktra {
                 }
             }
         }
-
-
         return shortestPaths;
+    }
+
+    public static void fullDijsktra(Graph graph){
+        for (int i = 0; i < graph.getVerticesNumber(); i++){
+            Dijsktra.solver(graph, i);
+        }
+    }
+
+    public static String fullDijsktraString(Graph graph){
+        String fullDijsktraString = "shortest paths with Dijsktra :\n";
+        for (int i = 0; i < graph.getVerticesNumber(); i++){
+            fullDijsktraString += Dijsktra.toString(Dijsktra.solver(graph, i), i) + "\n";
+        }
+        return fullDijsktraString;
     }
 
     public static Integer extractMin(List<Integer> priorityList, List<Integer> shortestPaths){
